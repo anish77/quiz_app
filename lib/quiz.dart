@@ -13,6 +13,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  final List<String> selectedAnswers = [];
   var activeScreen = 'home-screen';
 
   switchScreen() {
@@ -21,12 +22,17 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   @override
   Widget build(BuildContext context) {
-    
-    final screenWidget = activeScreen == 'home-screen'
-        ? HomeScreen(switchScreen)
-        : const QuestionScreen();
+    Widget screenWidget = HomeScreen(switchScreen);
+
+    if (activeScreen == 'home-screen') {
+      screenWidget = QuestionScreen(onSelectAnswer: chooseAnswer,);
+    }
 
     return MaterialApp(
       home: Scaffold(

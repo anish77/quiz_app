@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -15,13 +16,13 @@ class HomeScreen extends StatelessWidget {
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 250,
-          color: const Color.fromARGB(150, 255, 255, 255),
+          color: const Color.fromARGB(255, 207, 115, 246),
         ),
         const SizedBox(height: 80,),
-        const Text(
-          style: TextStyle(
+         Text(
+          style: GoogleFonts.lato(
             fontSize: 24,
-            color: Colors.white,
+            color: const Color.fromARGB(255, 207, 115, 246),
           ),
           'Lern Flutter the fun way!',
         ),
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
         OutlinedButton.icon(
       onPressed: startQuiz,
       style: OutlinedButton.styleFrom(
-        foregroundColor: Colors.white,
+        foregroundColor: const Color.fromARGB(255, 207, 115, 246),
         textStyle: const TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
